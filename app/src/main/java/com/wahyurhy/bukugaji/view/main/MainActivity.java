@@ -1,5 +1,13 @@
 package com.wahyurhy.bukugaji.view.main;
 
+import static com.wahyurhy.bukugaji.utils.Const.GAJI_BERSIH;
+import static com.wahyurhy.bukugaji.utils.Const.GAJI_POKOK;
+import static com.wahyurhy.bukugaji.utils.Const.JABATAN;
+import static com.wahyurhy.bukugaji.utils.Const.LEMBUR;
+import static com.wahyurhy.bukugaji.utils.Const.NAMA;
+import static com.wahyurhy.bukugaji.utils.Const.POTONGAN_KOPERASI;
+import static com.wahyurhy.bukugaji.utils.Const.TOTAL_GAJI;
+import static com.wahyurhy.bukugaji.utils.Const.TUNJANGAN_ANAK;
 import static com.wahyurhy.bukugaji.utils.Utils.setSystemBarColor;
 import static com.wahyurhy.bukugaji.utils.Utils.setSystemBarLight;
 
@@ -89,8 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mEdtJabatan.setText(jabatan);
                 break;
             case R.id.btn_hitung:
-                hitungGaji();
-                resultActivity();
+                checkEmptyEditText();
                 break;
         }
     }
@@ -98,18 +105,74 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void resultActivity() {
         Intent intentResultActivity = new Intent(this, ResultActivity.class);
 
-        intentResultActivity.putExtra("nama", String.valueOf(mEdtFullName.getText()));
-        intentResultActivity.putExtra("jabatan", String.valueOf(mEdtJabatan.getText()));
-        intentResultActivity.putExtra("gaji_pokok", String.valueOf(gajiPokok));
-        intentResultActivity.putExtra("lembur", String.valueOf(totalLembur));
-        intentResultActivity.putExtra("tunjangan_anak", String.valueOf(totalTunjanganAnak));
-        intentResultActivity.putExtra("potongan_koperasi", String.valueOf(potonganKoperasi));
-        intentResultActivity.putExtra("total_gaji", String.valueOf(totalGajiInt));
+        intentResultActivity.putExtra(NAMA, String.valueOf(mEdtFullName.getText()));
+        intentResultActivity.putExtra(JABATAN, String.valueOf(mEdtJabatan.getText()));
+        intentResultActivity.putExtra(GAJI_POKOK, String.valueOf(gajiPokok));
+        intentResultActivity.putExtra(GAJI_BERSIH, String.valueOf(gajiBersihInt));
+        intentResultActivity.putExtra(LEMBUR, String.valueOf(totalLembur));
+        intentResultActivity.putExtra(TUNJANGAN_ANAK, String.valueOf(totalTunjanganAnak));
+        intentResultActivity.putExtra(POTONGAN_KOPERASI, String.valueOf(potonganKoperasi));
+        intentResultActivity.putExtra(TOTAL_GAJI, String.valueOf(totalGajiInt));
 
         startActivity(intentResultActivity);
     }
 
+    private void checkEmptyEditText() {
+        Boolean isFullNameEmpty, isJabatanEmpty, isTotalLemburEmpty, isJumlahAnakEmpty;
+
+        if (mEdtJabatan.getText().toString().trim().equalsIgnoreCase("")) {
+            mEdtJabatan.setText("Harap di isi!");
+            mEdtJabatan.setTextColor(getResources().getColor(R.color.red));
+            isJabatanEmpty = true;
+        } else {
+            mEdtJabatan.setError(null);
+            mEdtJabatan.setTextColor(getResources().getColor(R.color.primary_text_color));
+            isJabatanEmpty = false;
+        }
+
+        if (mEdtJumlahAnak.getText().toString().trim().equalsIgnoreCase("")) {
+            mEdtJumlahAnak.setError("Harap di isi!");
+            mEdtJumlahAnak.requestFocus();
+            isJumlahAnakEmpty = true;
+        } else {
+            mEdtJumlahAnak.setError(null);
+            isJumlahAnakEmpty = false;
+        }
+
+        if (mEdtTotalLembur.getText().toString().trim().equalsIgnoreCase("")) {
+            mEdtTotalLembur.setError("Harap di isi!");
+            mEdtTotalLembur.requestFocus();
+            isTotalLemburEmpty = true;
+        } else {
+            mEdtTotalLembur.setError(null);
+            isTotalLemburEmpty = false;
+        }
+
+        if (mEdtFullName.getText().toString().trim().equalsIgnoreCase("")) {
+            mEdtFullName.setError("Harap di isi!");
+            mEdtFullName.requestFocus();
+            isFullNameEmpty = true;
+        } else {
+            mEdtFullName.setError(null);
+            isFullNameEmpty = false;
+        }
+
+        Log.d("TAG", "checkEmptyEditText: " + isFullNameEmpty + isJabatanEmpty + isTotalLemburEmpty + isJumlahAnakEmpty);
+
+        if (!isFullNameEmpty && !isJabatanEmpty && !isTotalLemburEmpty && !isJumlahAnakEmpty) {
+            if (mEdtJabatan.getText().toString().equals("Harap di isi!")) {
+                mEdtJabatan.setTextColor(getResources().getColor(R.color.red));
+            } else {
+                hitungGaji();
+                resultActivity();
+            }
+        }
+
+
+    }
+
     private void hitungGaji() {
+        Log.d("TAG", "hitungGaji: hitungGaji()");
         upahLemburPerJam = 7000;
         tunjanganAnakPerAnak = 150000;
         potonganKoperasi = 0.05 * gajiPokok;
@@ -156,6 +219,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         dialogJabatan.show();
         dialogJabatan.getWindow().setAttributes(lp);
+        mEdtJabatan.setTextColor(getResources().getColor(R.color.primary_text_color));
+        mEdtJabatan.setText(jabatan);
     }
 
     @Override
@@ -176,6 +241,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.rb_Karyawan:
                 jabatan = "Karyawan";
                 gajiPokok = 5000000;
+                break;
+            default:
+                jabatan = "Harap di isi!";
                 break;
         }
     }

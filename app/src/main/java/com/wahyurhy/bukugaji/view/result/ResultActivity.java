@@ -1,5 +1,13 @@
 package com.wahyurhy.bukugaji.view.result;
 
+import static com.wahyurhy.bukugaji.utils.Const.GAJI_BERSIH;
+import static com.wahyurhy.bukugaji.utils.Const.GAJI_POKOK;
+import static com.wahyurhy.bukugaji.utils.Const.JABATAN;
+import static com.wahyurhy.bukugaji.utils.Const.LEMBUR;
+import static com.wahyurhy.bukugaji.utils.Const.NAMA;
+import static com.wahyurhy.bukugaji.utils.Const.POTONGAN_KOPERASI;
+import static com.wahyurhy.bukugaji.utils.Const.TOTAL_GAJI;
+import static com.wahyurhy.bukugaji.utils.Const.TUNJANGAN_ANAK;
 import static com.wahyurhy.bukugaji.utils.Utils.formatRupiah;
 import static com.wahyurhy.bukugaji.utils.Utils.setSystemBarColor;
 import static com.wahyurhy.bukugaji.utils.Utils.setSystemBarLight;
@@ -31,6 +39,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private TextInputEditText mEdtTunjanganAnak;
     private LinearLayout mLytPotonganKoperasi;
     private TextInputEditText mEdtPotonganKoperasi;
+    private LinearLayout mLytGajiBersih;
+    private TextInputEditText mEdtGajiBersih;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +76,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         mEdtTunjanganAnak = findViewById(R.id.edt_tunjangan_anak);
         mLytPotonganKoperasi = findViewById(R.id.lyt_potongan_koperasi);
         mEdtPotonganKoperasi = findViewById(R.id.edt_potongan_koperasi);
+        mLytGajiBersih = findViewById(R.id.lyt_gaji_bersih);
+        mEdtGajiBersih = findViewById(R.id.edt_gaji_bersih);
 
         initData();
     }
@@ -74,22 +86,25 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         Bundle data = getIntent().getExtras();
         if (!data.isEmpty()) {
 
-            mEdtFullName.setText(data.getString("nama"));
-            mEdtJabatan.setText(data.getString("jabatan"));
+            mEdtFullName.setText(data.getString(NAMA));
+            mEdtJabatan.setText(data.getString(JABATAN));
 
-            String gajiPokok = data.getString("gaji_pokok");
+            String gajiPokok = data.getString(GAJI_POKOK);
             mEdtGajiPokok.setText(formatRupiah(Integer.parseInt(gajiPokok)));
 
-            String lembur = data.getString("lembur");
+            String gajiBersih = data.getString(GAJI_BERSIH);
+            mEdtGajiBersih.setText(formatRupiah(Integer.parseInt(gajiBersih)));
+
+            String lembur = data.getString(LEMBUR);
             mEdtLembur.setText(formatRupiah(Integer.parseInt(lembur)));
 
-            String tunjanganAnak = data.getString("tunjangan_anak");
+            String tunjanganAnak = data.getString(TUNJANGAN_ANAK);
             mEdtTunjanganAnak.setText(formatRupiah(Integer.parseInt(tunjanganAnak)));
 
-            String potonganKoperasi = data.getString("potongan_koperasi");
+            String potonganKoperasi = data.getString(POTONGAN_KOPERASI);
             mEdtPotonganKoperasi.setText(formatRupiah(Double.parseDouble(potonganKoperasi)));
 
-            String totalGaji = data.getString("total_gaji");
+            String totalGaji = data.getString(TOTAL_GAJI);
             mTvTotalGaji.setText(formatRupiah(Integer.parseInt(totalGaji)));
         }
     }

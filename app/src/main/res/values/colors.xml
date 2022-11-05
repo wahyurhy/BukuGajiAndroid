@@ -17,4 +17,5 @@
     <color name="secondary_text_color">#858693</color>
     <color name="gradient_color_1">#FDD447</color>
     <color name="gradient_color_2">#FDBA3C</color>
+    <color name="red">#FF0000</color>
 </resources>
