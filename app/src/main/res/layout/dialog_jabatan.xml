@@ -18,8 +18,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pilih Jabatan"
-                android:textColor="@color/primary_text_color"
+                android:text="@string/pilih_jabatan"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

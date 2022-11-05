@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             isJabatanEmpty = true;
         } else {
             mEdtJabatan.setError(null);
-            mEdtJabatan.setTextColor(getResources().getColor(R.color.primary_text_color));
+            mEdtJabatan.setTextColor(getResources().getColor(R.color.defaultTextColor));
             isJabatanEmpty = false;
         }
 
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         dialogJabatan.show();
         dialogJabatan.getWindow().setAttributes(lp);
-        mEdtJabatan.setTextColor(getResources().getColor(R.color.primary_text_color));
+        mEdtJabatan.setTextColor(getResources().getColor(R.color.defaultTextColor));
         mEdtJabatan.setText(jabatan);
     }
 

@@ -15,7 +15,10 @@
     </style>
 
     <style name="OutlineForm" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <item name="boxStrokeColor">@color/secondary_color</item>
+        <item name="boxStrokeColor">@color/selector_stroke_til</item>
         <item name="boxStrokeWidth">2dp</item>
     </style>
+
+    <color name="defaultTextColor">@color/primary_text_color</color>
+    <color name="defaultBackGroundColor">@color/white</color>
 </resources>

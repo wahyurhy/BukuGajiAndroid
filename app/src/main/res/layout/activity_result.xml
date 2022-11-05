@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/gajiku"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
                     android:text="Rp22.500.000"
-                    android:textColor="@color/primary_text_color"
+                    android:textColor="@color/defaultTextColor"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Nama Lengkap"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                     android:imeOptions="actionDone"
                     android:inputType="textPersonName"
                     android:text="Wahyu Rahayu"
-                    android:textColor="@color/primary_text_color" />
+                    android:textColor="@color/defaultTextColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,7 +122,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Jabatan"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -149,7 +149,7 @@
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:text="Direktur"
-                        android:textColor="@color/primary_text_color" />
+                        android:textColor="@color/defaultTextColor" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -170,7 +170,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/gaji_pokok_title"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -190,7 +190,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:text="Rp 20.000.000"
-                    android:textColor="@color/primary_text_color" />
+                    android:textColor="@color/defaultTextColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -209,7 +209,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/gaji_bersih_title"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -229,7 +229,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:text="Rp 20.000.000"
-                    android:textColor="@color/primary_text_color" />
+                    android:textColor="@color/defaultTextColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -248,7 +248,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/lembur_title"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -268,7 +268,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:text="Rp 500.000"
-                    android:textColor="@color/primary_text_color" />
+                    android:textColor="@color/defaultTextColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -287,7 +287,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/tunjangan_anak_title"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -307,7 +307,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:text="Rp 300.000"
-                    android:textColor="@color/primary_text_color" />
+                    android:textColor="@color/defaultTextColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -326,7 +326,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/potongan_koperasi_title"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/defaultTextColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -346,7 +346,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:text="Rp 100.000"
-                    android:textColor="@color/primary_text_color" />
+                    android:textColor="@color/defaultTextColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
