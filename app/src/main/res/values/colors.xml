@@ -19,4 +19,5 @@
     <color name="gradient_color_2">#FDBA3C</color>
     <color name="red">#FF0000</color>
     <color name="gray">#6B6B6B</color>
+    <color name="ic_launcher_background">#000000</color>
 </resources>
