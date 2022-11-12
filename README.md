@@ -1,4 +1,4 @@
-﻿# Buku Gaji Android
+﻿# Buku Gaji Android [![<wahyurhy>](https://circleci.com/gh/wahyurhy/BukuGajiAndroid.svg?style=svg)](https://app.circleci.com/pipelines/github/wahyurhy/BukuGajiAndroid)
  
  ## Design
 ![image](https://user-images.githubusercontent.com/55066990/200036360-d45497c7-a2f7-4859-bfe3-6f8370d9b0a5.png)
